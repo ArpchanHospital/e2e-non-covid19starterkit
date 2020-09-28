@@ -1,0 +1,1 @@
+# e2e-non-covid19starterkit
