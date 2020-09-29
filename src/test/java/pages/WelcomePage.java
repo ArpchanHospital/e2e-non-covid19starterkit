@@ -9,7 +9,7 @@ public class WelcomePage extends PageFactory {
     private final By clinicalService = By.className("launch");
 
     public void clickClinicalService(){
-//        Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(clinicalService));
+        Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(clinicalService));
         driver.findElement(clinicalService).click();
         for(String winHandle : driver.getWindowHandles()){
             driver.switchTo().window(winHandle);
