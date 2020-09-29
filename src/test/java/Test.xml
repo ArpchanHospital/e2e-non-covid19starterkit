@@ -8,6 +8,8 @@
         <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="tests.WelcomePageTest"/>
+            <class name="tests.LoginPageTest"/>
+            <class name="tests.RegistrationPageTest"></class>
         </classes>
     </test>
 </suite>
