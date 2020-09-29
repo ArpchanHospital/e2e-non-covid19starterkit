@@ -11,5 +11,8 @@ public class WelcomePage extends PageFactory {
     public void clickClinicalService(){
 //        Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(clinicalService));
         driver.findElement(clinicalService).click();
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
     }
 }
