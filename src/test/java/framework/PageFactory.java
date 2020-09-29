@@ -1,9 +1,6 @@
 package framework;
 
-import pages.HomePage;
-import pages.LoginPage;
-import pages.WelcomePage;
-import pages.RegistrationPage;
+import pages.*;
 
 public class PageFactory extends Driver {
 
@@ -12,6 +9,7 @@ public class PageFactory extends Driver {
     private static LoginPage loginPage;
     private static HomePage homePage;
     private static RegistrationPage registrationPage;
+    private static ProgramsPage programsPage;
 
     public static WelcomePage getWelcomePage() {
         return welcomePage;
@@ -29,10 +27,15 @@ public class PageFactory extends Driver {
         return registrationPage;
     }
 
+    public static ProgramsPage getProgramsPage() {
+        return programsPage;
+    }
+
     public static void instantiatePages() {
         loginPage = new LoginPage();
         welcomePage = new WelcomePage();
         homePage = new HomePage();
         registrationPage = new RegistrationPage();
+        programsPage = new ProgramsPage();
     }
 }
