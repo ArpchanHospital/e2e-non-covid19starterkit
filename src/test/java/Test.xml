@@ -9,7 +9,7 @@
         <classes>
             <class name="tests.WelcomePageTest"/>
             <class name="tests.LoginPageTest"/>
-            <class name="tests.RegistrationPageTest"></class>
+            <class name="tests.RegistrationPageTest"/>
         </classes>
     </test>
 </suite>
