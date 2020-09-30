@@ -23,7 +23,6 @@ public class RegistrationPage extends PageFactory {
     private final By successSaveMessage = By.className("message-text");
 //    private final By homeButton = By.cssSelector("a.back-btn");
     private final By homeButton = By.xpath("//*[contains(@class, 'back-btn')]");
-    //*[@id="observation_22"]
 
     public void clickCreateNew(){
         Wait.explicitWait(ExpectedConditions.elementToBeClickable(createNew));

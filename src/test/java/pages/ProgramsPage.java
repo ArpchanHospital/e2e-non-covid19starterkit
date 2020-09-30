@@ -3,6 +3,7 @@ package pages;
 import framework.PageFactory;
 import framework.Wait;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,10 +22,8 @@ public class ProgramsPage extends PageFactory {
     private final By newProgramEnrollment = By.xpath("//*[contains(@class,'section-title')]");
     private final By formField  = By.xpath("//*[contains(@class,'ng-pristine')]");
     private final By dateField  = By.xpath("//*[contains(@type,'date')]");
-//    private final By HIVprogram = By.cssSelector("")
-//    Select programList = new Select(driver.findElement(By.cssSelector(".pristine.ng-valid.ng-touched")));
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    LocalDate localDate = LocalDate.now();
+    private final By enroll  = By.xpath("//*[contains(@type,'submit')]");
+
 
 
     public void clickOnLastPatient(){
@@ -42,16 +41,31 @@ public class ProgramsPage extends PageFactory {
 
     public void fillNewEnrollmentForm() {
         Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(formField));
-//        programList.selectByIndex(1);
         driver.findElements(formField).get(1).sendKeys("HIV Program");
-        System.out.println(dtf.format(localDate));
-        driver.findElement(dateField).sendKeys();
+
+        String strDateDOB="12/09/2020";
+        WebElement select = driver.findElement(dateField);
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].type = arguments[1]", select, "text");
+        js.executeScript("arguments[0].value = arguments[1]", select, strDateDOB);
+//        driver.findElement(By.cssSelector(".input.ng-valid-max")).sendKeys(strDateDOB);
+
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         driver.findElements(formField).get(2).sendKeys(String.valueOf(new Random().nextInt(10)));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickOnEnroll(){
+        Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(enroll));
+        driver.findElement(enroll).click();
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

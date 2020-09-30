@@ -41,5 +41,6 @@ public class RegistrationPageTest extends BaseTestClass {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        getProgramsPage().clickOnEnroll();
     }
 }
