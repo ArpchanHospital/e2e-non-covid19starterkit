@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RegistrationPage extends PageFactory {
     private final By createNew = By.partialLinkText("Create");
-    private final By StartOPDVisit = By.className("primaryOption");
+    private final By StartOPDVisit = By.xpath("//*[contains(@class, 'buttonClass')]");
     private final By patientFirstName = By.id("givenName");
     private final By patientlastName = By.id("familyName");
     private final By patientAge = By.id("ageYears");
@@ -50,7 +50,7 @@ public class RegistrationPage extends PageFactory {
 
     public void clickStartOPDvisit(){
         Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(StartOPDVisit));
-        driver.findElement(StartOPDVisit).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(StartOPDVisit));
     }
 
     public void fillRegistrationFee(String fee){

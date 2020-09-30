@@ -17,7 +17,7 @@ public class HomePage extends PageFactory {
 
     public void clickRegistration(){
         Wait.explicitWait(ExpectedConditions.elementToBeClickable(Registration));
-        driver.findElement(Registration).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(Registration));
     }
 
     public void clickPrograms(){
