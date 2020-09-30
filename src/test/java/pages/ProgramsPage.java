@@ -23,6 +23,7 @@ public class ProgramsPage extends PageFactory {
     private final By formField  = By.xpath("//*[contains(@class,'ng-pristine')]");
     private final By dateField  = By.xpath("//*[contains(@type,'date')]");
     private final By enroll  = By.xpath("//*[contains(@type,'submit')]");
+    private final By HIVprogramDashboardButton = By.id("dashboard-link");
 
 
 
@@ -50,26 +51,32 @@ public class ProgramsPage extends PageFactory {
         js.executeScript("arguments[0].type = arguments[1]", select, "text");
         js.executeScript("arguments[0].value = arguments[1]", select, strDateDOB);
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        driver.findElements(formField).get(2).sendKeys(String.valueOf(new Random().nextInt(10)));
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        driver.findElements(formField).get(2).sendKeys(String.valueOf(1 + new Random().nextInt(10)));
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void clickOnEnroll(){
         Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(enroll));
         driver.findElement(enroll).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    public void clickOnProgramDashboardButton(){
+        Wait.explicitWait(ExpectedConditions.presenceOfElementLocated(HIVprogramDashboardButton));
+//        driver.findElement(HIVprogramDashboardButton).click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(HIVprogramDashboardButton));
     }
 }

@@ -10,6 +10,7 @@
             <class name="tests.WelcomePageTest"/>
             <class name="tests.LoginPageTest"/>
             <class name="tests.RegistrationPageTest"/>
+            <class name="tests.ProgramDashboardTest"/>
         </classes>
     </test>
 </suite>

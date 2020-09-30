@@ -10,6 +10,7 @@ public class PageFactory extends Driver {
     private static HomePage homePage;
     private static RegistrationPage registrationPage;
     private static ProgramsPage programsPage;
+    private static ProgramDashboardPage programDashboardPage;
 
     public static WelcomePage getWelcomePage() {
         return welcomePage;
@@ -31,11 +32,16 @@ public class PageFactory extends Driver {
         return programsPage;
     }
 
+    public static ProgramDashboardPage getProgramDashboardPage() {
+        return programDashboardPage;
+    }
+
     public static void instantiatePages() {
         loginPage = new LoginPage();
         welcomePage = new WelcomePage();
         homePage = new HomePage();
         registrationPage = new RegistrationPage();
         programsPage = new ProgramsPage();
+        programDashboardPage = new ProgramDashboardPage();
     }
 }

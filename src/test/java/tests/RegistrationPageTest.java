@@ -32,5 +32,11 @@ public class RegistrationPageTest extends BaseTestClass {
             e.printStackTrace();
         }
         getProgramsPage().clickOnEnroll();
+        getProgramsPage().clickOnProgramDashboardButton();
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }
