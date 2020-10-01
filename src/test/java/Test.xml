@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <listeners>
+        <listener class-name="listener.ExtentReporterNG"/>
+    </listeners>
+    <test name="admin end to end test">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="tests.WelcomePageTest"/>
+            <class name="tests.LoginPageTest"/>
+            <class name="tests.RegistrationPageTest"/>
+            <class name="tests.ProgramDashboardTest"/>
+            <class name="tests.PatientOPDVisitCloseTest"/>
+            <class name="tests.TestReportGenerationTest"/>
+        </classes>
+    </test>
+</suite>
