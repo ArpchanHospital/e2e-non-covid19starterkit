@@ -5,7 +5,7 @@
         <listener class-name="listener.ExtentReporterNG"/>
     </listeners>
     <test name="admin end to end test">
-        <parameter name="browser" value="Firefox"/>
+        <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="tests.WelcomePageTest"/>
             <class name="tests.LoginPageTest"/>

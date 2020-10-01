@@ -66,6 +66,11 @@ public class ProgramDashboardTest extends BaseTestClass {
 //        getProgramDashboardPage().goToPatientListPage();
 
         getProgramsPage().goToHomePage();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         getProgramsPage().goToHomePage();
     }
 }
