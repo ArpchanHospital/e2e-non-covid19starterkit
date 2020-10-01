@@ -23,6 +23,11 @@ public class RegistrationPage extends PageFactory {
     private final By successSaveMessage = By.className("message-text");
 //    private final By homeButton = By.cssSelector("a.back-btn");
     private final By homeButton = By.xpath("//*[contains(@class, 'back-btn')]");
+    private final By searchId = By.xpath("//*[contains(@id,'registrationNumber')]");
+    private final By listOfPatients = By.xpath("//table/tbody/tr/td[1]");
+    private final By enterVisitDetails = By.xpath("//*[contains(@class,'right confirm')]");
+    private final By cancelVisit = By.xpath("//*[contains(@class,'cancel')]");
+
 
     public void clickCreateNew(){
         Wait.explicitWait(ExpectedConditions.elementToBeClickable(createNew));
@@ -73,5 +78,33 @@ public class RegistrationPage extends PageFactory {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", driver.findElement(homeButton));
     }
 
+    public void SearchPatientById(String id){
+        Wait.explicitWait(ExpectedConditions.elementToBeClickable(searchId));
+        driver.findElement(searchId).sendKeys(id);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.findElement(searchId).submit();
+    }
+
+    public void clickOnLastPatientId(){
+        Wait.explicitWait(ExpectedConditions.elementToBeClickable(listOfPatients));
+        List<WebElement> list=driver.findElements(listOfPatients);
+        list.get(list.size()-1).click();
+    }
+
+    public void clickOnEnterVisitDetails(){
+        Wait.explicitWait(ExpectedConditions.elementToBeClickable(enterVisitDetails));
+        driver.findElement(enterVisitDetails).click();
+    }
+    public void clickOnCancelVisit(){
+        Wait.explicitWait(ExpectedConditions.elementToBeClickable(cancelVisit));
+        driver.findElement(cancelVisit).click();
+    }
+    public void clickOkOnAlertBox(){
+        driver.switchTo().alert().accept();
+    }
 
 }

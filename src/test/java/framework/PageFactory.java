@@ -11,6 +11,11 @@ public class PageFactory extends Driver {
     private static RegistrationPage registrationPage;
     private static ProgramsPage programsPage;
     private static ProgramDashboardPage programDashboardPage;
+    private static ReportsPage reportsPage;
+
+    public static ReportsPage getReportsPage() {
+        return reportsPage;
+    }
 
     public static WelcomePage getWelcomePage() {
         return welcomePage;
@@ -43,5 +48,6 @@ public class PageFactory extends Driver {
         registrationPage = new RegistrationPage();
         programsPage = new ProgramsPage();
         programDashboardPage = new ProgramDashboardPage();
+        reportsPage = new ReportsPage();
     }
 }

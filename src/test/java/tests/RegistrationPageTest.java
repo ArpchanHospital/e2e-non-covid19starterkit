@@ -24,6 +24,11 @@ public class RegistrationPageTest extends BaseTestClass {
     public void enrollOnHIVprogram() {
         getHomePage().clickPrograms();
         getProgramsPage().clickOnLastPatient();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         getProgramsPage().clickNewProgramEnrollment();
         getProgramsPage().fillNewEnrollmentForm();
         try {

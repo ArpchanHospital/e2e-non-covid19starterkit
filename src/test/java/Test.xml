@@ -11,6 +11,8 @@
             <class name="tests.LoginPageTest"/>
             <class name="tests.RegistrationPageTest"/>
             <class name="tests.ProgramDashboardTest"/>
+            <class name="tests.PatientOPDVisitCloseTest"/>
+            <class name="tests.TestReportGenerationTest"/>
         </classes>
     </test>
 </suite>
